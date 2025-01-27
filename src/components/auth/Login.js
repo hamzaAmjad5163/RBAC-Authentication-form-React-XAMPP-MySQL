@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../../assets/css/auth.css';
-
+import PasswordInput from "../fileds/Password";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -75,7 +75,7 @@ const Login = () => {
           </div>
           <div className="mb-3">
             <label htmlFor="password" className="form-label">Password</label>
-            <input
+            <PasswordInput
               type="password"
               id="password"
               className="form-control"
@@ -90,6 +90,10 @@ const Login = () => {
         <p className="text-center mt-3">
           Don't have an account?{" "}
           <a href="/register" className="text-decoration-none">Register</a>
+        </p>
+        <p className="text-center mt-3">
+          Forgot your password?{" "}
+          <a href="/forget-password" className="text-decoration-none">Reset Password</a>
         </p>
       </div>
     </div>

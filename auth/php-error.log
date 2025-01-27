@@ -1,0 +1,25 @@
+[27-Jan-2025 10:57:22 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'reset_token' in 'field list' in C:\xampp\htdocs\react-app\auth\auth\forget-password.php:53
+Stack trace:
+#0 C:\xampp\htdocs\react-app\auth\auth\forget-password.php(53): mysqli->prepare('UPDATE users SE...')
+#1 {main}
+  thrown in C:\xampp\htdocs\react-app\auth\auth\forget-password.php on line 53
+[27-Jan-2025 10:57:57 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'reset_token' in 'field list' in C:\xampp\htdocs\react-app\auth\auth\forget-password.php:53
+Stack trace:
+#0 C:\xampp\htdocs\react-app\auth\auth\forget-password.php(53): mysqli->prepare('UPDATE users SE...')
+#1 {main}
+  thrown in C:\xampp\htdocs\react-app\auth\auth\forget-password.php on line 53
+[27-Jan-2025 10:59:11 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'reset_token' in 'field list' in C:\xampp\htdocs\react-app\auth\auth\forget-password.php:53
+Stack trace:
+#0 C:\xampp\htdocs\react-app\auth\auth\forget-password.php(53): mysqli->prepare('UPDATE users SE...')
+#1 {main}
+  thrown in C:\xampp\htdocs\react-app\auth\auth\forget-password.php on line 53
+[27-Jan-2025 11:03:28 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'reset_token' in 'field list' in C:\xampp\htdocs\react-app\auth\auth\forget-password.php:53
+Stack trace:
+#0 C:\xampp\htdocs\react-app\auth\auth\forget-password.php(53): mysqli->prepare('UPDATE users SE...')
+#1 {main}
+  thrown in C:\xampp\htdocs\react-app\auth\auth\forget-password.php on line 53
+[27-Jan-2025 11:03:37 Europe/Berlin] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'reset_token' in 'field list' in C:\xampp\htdocs\react-app\auth\auth\forget-password.php:53
+Stack trace:
+#0 C:\xampp\htdocs\react-app\auth\auth\forget-password.php(53): mysqli->prepare('UPDATE users SE...')
+#1 {main}
+  thrown in C:\xampp\htdocs\react-app\auth\auth\forget-password.php on line 53

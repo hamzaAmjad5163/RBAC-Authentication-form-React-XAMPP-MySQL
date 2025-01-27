@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../../assets/css/auth.css';
+import PasswordInput from "../fileds/Password";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -71,7 +72,7 @@ const Register = () => {
             <label htmlFor="password" className="form-label">
               Password
             </label>
-            <input
+            <PasswordInput
               type="password"
               id="password"
               className="form-control"
