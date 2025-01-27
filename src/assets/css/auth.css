@@ -1,0 +1,102 @@
+body {
+    background-color: #19123B;
+  }
+  
+  .card {
+    border: none;
+    border-top: 5px solid rgb(176,106,252);
+    background: #212042;
+    color: #57557A;
+  }
+  
+  .fab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: #2A284D;
+    height: 40px;
+    width: 90px;
+  }
+  
+  .fab:hover {
+    cursor: pointer;
+  }
+  
+  .fa-twitter {
+    color: #56ABEC;
+  }
+  
+  .fa-facebook {
+    color: #1775F1;
+  }
+  
+  .fa-google {
+    color: #CB5048;
+  }
+  
+  .division {
+    position: relative;
+    margin: 30px auto 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .division .line {
+    border-top: 1.5px solid #57557A;
+    position: absolute;
+    top: 13px;
+    width: 85%;
+  }
+  
+  .line.l {
+    left: 52px;
+  }
+  
+  .line.r {
+    right: 45px;
+  }
+  
+  .myform {
+    padding: 0 25px;
+  }
+  
+  .form-control {
+    border: 1px solid #57557A;
+    border-radius: 3px;
+    background: #212042;
+    margin-bottom: 20px;
+  }
+  
+  .form-control:focus {
+    border: 1px solid #57557A;
+    background: #212042;
+    color: #fff;
+  }
+  
+  .bn {
+    text-decoration: underline;
+  }
+  
+  .bn:hover {
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, rgba(176,106,252,1) 39%, rgba(116,17,255,1) 101%);
+    border: none;
+    border-radius: 50px;
+  }
+  
+  .btn-primary:focus {
+    box-shadow: none;
+  }
+  
+  small {
+    color: #F2CEFF;
+  }
+  
+  .far.fa-user {
+    font-size: 13px;
+  }
+  

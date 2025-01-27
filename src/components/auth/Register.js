@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles.css";
+import '../../assets/css/auth.css';
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -12,13 +12,18 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost/auth/register.php", {
+      const response = await fetch("http://localhost/react-app/auth/auth/register.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
       });
+
+      if (!response.ok) {
+        setError("Server responded with an error.");
+        return;
+      }
 
       const data = await response.json();
 
@@ -34,13 +39,15 @@ const Register = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-form">
-        <h2>Register</h2>
+    <div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="card p-4 shadow-lg" style={{ width: "100%", maxWidth: "400px" }}>
+        <h2 className="text-center mb-4">Register</h2>
         {error && <div className="alert alert-danger">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email</label>
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -52,7 +59,9 @@ const Register = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
             <input
               type="password"
               id="password"
@@ -63,8 +72,16 @@ const Register = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100">Register</button>
+          <button type="submit" className="btn btn-primary w-100">
+            Register
+          </button>
         </form>
+        <p className="text-center mt-3">
+          Already have an account?{" "}
+          <a href="/login" className="text-decoration-none">
+            Login
+          </a>
+        </p>
       </div>
     </div>
   );
