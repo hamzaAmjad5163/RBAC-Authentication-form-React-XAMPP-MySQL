@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles.css";
-
+import '../../assets/css/auth.css';
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,13 +11,18 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost/auth/login.php", {
+      const response = await fetch("http://localhost/react-app/auth/auth/login.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
       });
+
+      if (!response.ok) {
+        setError("Server responded with an error.");
+        return;
+      }
 
       const data = await response.json();
 
@@ -34,13 +38,15 @@ const Login = () => {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-form">
-        <h2>Login</h2>
+    <div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="card p-4 shadow-lg" style={{ width: "100%", maxWidth: "400px" }}>
+        <h2 className="text-center mb-4">Login</h2>
         {error && <div className="alert alert-danger">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email</label>
+            <label htmlFor="email" className="form-label">
+              Email
+            </label>
             <input
               type="email"
               id="email"
@@ -52,7 +58,9 @@ const Login = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">Password</label>
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
             <input
               type="password"
               id="password"
@@ -63,8 +71,16 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100">Login</button>
+          <button type="submit" className="btn btn-primary w-100">
+            Login
+          </button>
         </form>
+        <p className="text-center mt-3">
+          Don't have an account?{" "}
+          <a href="/register" className="text-decoration-none">
+            Register
+          </a>
+        </p>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import Dashboard from './pages/Dashboard';
 const App = () => {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="container mt-5">
         <Routes>
           <Route path="/" element={<Home />} />
