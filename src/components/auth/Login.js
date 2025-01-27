@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import '../../assets/css/auth.css';
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -9,6 +10,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Attempting to log in...");
 
     try {
       const response = await fetch("http://localhost/react-app/auth/auth/login.php", {
@@ -20,19 +22,35 @@ const Login = () => {
       });
 
       if (!response.ok) {
+        const errorText = await response.text();
+        console.error("Response Error:", errorText);
         setError("Server responded with an error.");
         return;
       }
 
       const data = await response.json();
+      console.log("Response Data:", data);
 
       if (data.success) {
         setError("");
-        navigate("/dashboard");
+        // Store the user role in localStorage
+        localStorage.setItem("user", JSON.stringify({ email: email, role: data.role }));
+        console.log("User data stored:", { email: email, role: data.role });
+
+        // Redirect based on the user role
+        if (data.role === "Admin") {
+          navigate("/admin");
+        } else if (data.role === "Super Admin") {
+          navigate("/super-admin");
+        } else {
+          navigate("/user");
+        }
       } else {
+        console.error("Data Error:", data.message);
         setError(data.message);
       }
     } catch (error) {
+      console.error("Fetch Error:", error);
       setError("An error occurred. Please try again.");
     }
   };
@@ -44,9 +62,7 @@ const Login = () => {
         {error && <div className="alert alert-danger">{error}</div>}
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">
-              Email
-            </label>
+            <label htmlFor="email" className="form-label">Email</label>
             <input
               type="email"
               id="email"
@@ -58,9 +74,7 @@ const Login = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">
-              Password
-            </label>
+            <label htmlFor="password" className="form-label">Password</label>
             <input
               type="password"
               id="password"
@@ -71,15 +85,11 @@ const Login = () => {
               required
             />
           </div>
-          <button type="submit" className="btn btn-primary w-100">
-            Login
-          </button>
+          <button type="submit" className="btn btn-primary w-100">Login</button>
         </form>
         <p className="text-center mt-3">
           Don't have an account?{" "}
-          <a href="/register" className="text-decoration-none">
-            Register
-          </a>
+          <a href="/register" className="text-decoration-none">Register</a>
         </p>
       </div>
     </div>
