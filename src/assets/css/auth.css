@@ -9,15 +9,7 @@ body {
     color: #57557A;
   }
   
-  .fab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    background: #2A284D;
-    height: 40px;
-    width: 90px;
-  }
+
   
   .fab:hover {
     cursor: pointer;
@@ -28,11 +20,11 @@ body {
   }
   
   .fa-facebook {
-    color: #1775F1;
+    color: #fff;
   }
   
   .fa-google {
-    color: #CB5048;
+    color: #fff;
   }
   
   .division {
@@ -99,4 +91,20 @@ body {
   .far.fa-user {
     font-size: 13px;
   }
-  
+  .btn-facebook {
+    background-color: #4267B2 !important;
+    color: white !important;
+  }
+
+  .btn-facebook i {
+    margin-right: 10px;
+  }
+
+  /* Google Button */
+  .btn-google {
+    background-color: #DB4437 !important;
+  }
+
+  .btn-google i {
+    margin-right: 10px;
+  }
