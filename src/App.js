@@ -1,10 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import Login from './components/auth/Login';
-import Register from './components/auth/Register';
-import Dashboard from './pages/Dashboard';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import ProtectedRoute from "./ProtectedRoute.js";
+import Home from "./pages/Home";
+import Login from "./components/auth/Login";
+import Register from "./components/auth/Register";
+import AdminDashboard from "./pages/AdminDashboard";
+import UserDashboard from "./pages/UserDashboard";
+import SuperAdminDashboard from "./pages/SuperAdminDashboard";
 
 const App = () => {
   return (
@@ -15,7 +18,18 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          {/* Protect the Admin route */}
+          <Route element={<ProtectedRoute roleRequired="Admin" />}>
+            <Route path="/admin" element={<AdminDashboard />} />
+          </Route>
+          {/* Protect the Super Admin route */}
+          <Route element={<ProtectedRoute roleRequired="Super Admin" />}>
+            <Route path="/super-admin" element={<SuperAdminDashboard />} />
+          </Route>
+          {/* Protect the User route */}
+          <Route element={<ProtectedRoute roleRequired="User" />}>
+            <Route path="/user" element={<UserDashboard />} />
+          </Route>
         </Routes>
       </div>
     </Router>
