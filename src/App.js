@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Router>
       {/* <Navbar /> */}
-      <div className="container mt-5">
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           {/* Auth Route */}
