@@ -28,7 +28,7 @@ const PasswordInput = ({ value, onChange, placeholder }) => {
         required
       />
       <FontAwesomeIcon
-        icon={showPassword ? faEyeSlash : faEye}
+        icon={showPassword ? faEye : faEyeSlash}
         className="position-absolute top-50 end-0 translate-middle-y me-3"
         onClick={() => setShowPassword(!showPassword)}
         style={{ cursor: "pointer" }}
