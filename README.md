@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+![Untitled design (6)](https://github.com/user-attachments/assets/de841f77-dfc3-4c7b-bb57-c9871ef646b2)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Authentication System with Role-Based Access Control
 
-## Available Scripts
+## Project Overview
+This repository contains a complete authentication system with role-based access control (RBAC). The system supports user registration, login, and password reset functionalities. Each user can be assigned one of three roles: **User**, **Admin**, or **Super Admin**, during the registration process. Depending on the assigned role, users will be redirected to their respective dashboards.
 
-In the project directory, you can run:
+## Features
+- **User Roles:**
+  - **User Dashboard:** Access to standard features for regular users.
+  - **Admin Dashboard:** Additional administrative functions.
+  - **Super Admin Dashboard:** Complete control over the application.
+- **Authentication:**
+  - Secure login and registration forms.
+  - Role assignment upon registration.
+  - Password reset functionality.
+- **Security Measures:**
+  - Form validation.
+  - Secure password storage.
+  - Authentication protection for routes.
 
-### `npm start`
+## Technologies Used
+- **Frontend:** React
+- **Backend:** PHP (via XAMPP)
+- **Database:** MySQL
+- **Other Tools:** XAMPP for local development
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation Guide
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
+Make sure the following tools are installed on your system:
+- [Node.js](https://nodejs.org/)
+- [XAMPP](https://www.apachefriends.org/index.html)
 
-### `npm test`
+### Backend Setup
+1. Start the XAMPP Control Panel and ensure that **Apache** and **MySQL** are running.
+2. Import the database:
+   - Open **phpMyAdmin** at `http://localhost/phpmyadmin/`.
+   - Create a new database (e.g., `auth_system`).
+   - Import the provided `auth_system.sql` file into the newly created database.
+3. Configure database settings in `backend/config.php`:
+   ```php
+   <?php
+   define('DB_HOST', 'localhost');
+   define('DB_USER', 'root');
+   define('DB_PASS', '');
+   define('DB_NAME', 'auth_system');
+   ?>
+   ```
+4. Place the backend files in the `htdocs` directory of XAMPP (`C:\xampp\htdocs\auth_system`).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Frontend Setup
+1. Navigate to the project directory:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+   The React app will be available at `http://localhost:3000/`.
 
-### `npm run build`
+## Project Structure
+```
+root
+├── backend          # PHP backend files
+├── frontend          # React frontend files
+└── database          # SQL dump file for initial setup
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Usage
+1. **Register a new user:**
+   - Navigate to the registration page.
+   - Fill out the form and select the desired role (User, Admin, or Super Admin).
+2. **Login:**
+   - Access the login page and provide your credentials.
+   - Users will be redirected to the appropriate dashboard based on their role.
+3. **Reset Password:**
+   - Click the "Forgot Password" link on the login page.
+   - Enter the registered email to receive reset instructions.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Roles and Dashboards
+| Role        | Description                       |
+|-------------|-----------------------------------|
+| **User**    | Standard user dashboard access.   |
+| **Admin**   | Admin dashboard and tools.       |
+| **Super Admin** | Full application management. |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
