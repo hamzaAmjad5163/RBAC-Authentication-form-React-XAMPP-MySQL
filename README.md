@@ -1,4 +1,5 @@
 ![Untitled design (6)](https://github.com/user-attachments/assets/de841f77-dfc3-4c7b-bb57-c9871ef646b2)
+![Untitled design (7)](https://github.com/user-attachments/assets/11508faa-cc52-4c7e-869a-2d86305cf954)
 
 # Authentication System with Role-Based Access Control
 
