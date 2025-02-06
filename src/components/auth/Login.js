@@ -109,7 +109,7 @@ const Login = () => {
   };
 
   return (
-    <GoogleOAuthProvider clientId="292359010802-kbp57qpprhd54gdpbpsv0h3douvudfgt.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="Your client id goes here">
       <div className="container d-flex justify-content-center align-items-center vh-100">
         <div className="card p-4 shadow-lg" style={{ width: "100%", maxWidth: "400px" }}>
           <h2 className="text-center mb-4">Login</h2>
